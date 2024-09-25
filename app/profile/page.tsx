@@ -336,7 +336,7 @@ const ProfilePage = () => {
       {/* Modale di conferma eliminazione account */}
       {showDeleteModal && (
         <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50 z-50">
-          <div className="bg-white p-6 rounded-lg shadow-lg max-w-md mx-auto">
+          <div className="bg-white p-6 shadow-lg max-w-md mx-auto">
             <h3 className="text-xl font-bold text-red-600 mb-4">
               Conferma eliminazione
             </h3>
