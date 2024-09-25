@@ -1,0 +1,201 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Bodoni:wght@400;700&family=Roboto:wght@400;500;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  /*   --foreground: #171717;
+ */
+}
+
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /*     --background: #0a0a0a;
+ */
+    /*   --foreground: #ededed; */
+  }
+}
+
+body {
+  @apply font-testo;
+  color: var(--background);
+  background: var(--background);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.clip-path-bottom {
+  clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 90%);
+  overflow: hidden;
+}
+
+.diagonal-line-container {
+  position: relative;
+  background-color: #822225;
+  padding-top: 10px;
+  padding-right: 40px;
+  padding-bottom: 20px;
+}
+
+.diagonal-line-top {
+  position: absolute;
+  top: -4px;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-color: #FF9E4A;
+  transform: skewY(-3deg);
+}
+
+.diagonal-line-container::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #8C4B2F;
+  transform: skewY(-3deg);
+}
+
+.fontx6 {
+  font-size: 6px;
+}
+
+.backgroundColorRed {
+  background-color: #822225;
+}
+
+.scale-80 {
+  transform: scale(0.8);
+}
+
+
+.custom-toast-success {
+  background-color: #44dc44 !important;
+  color: white !important;
+}
+
+.custom-toast-error {
+  background-color: #822225 !important;
+  color: white !important;
+}
+
+.custom-toast-info {
+  background-color: #822225 !important;
+  color: white !important;
+}
+
+
+/* Loading con Cerchietti */
+.loading-container {
+  display: flex;
+  position: fixed;
+  top:55%;
+  left: 50%;
+  transform: translate(-55%, -50%);
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
+}
+
+.loading-circle {
+  width: 12px;
+  height: 12px;
+  background-color: #4e614e;
+  border-radius: 50%;
+  animation: loading-circle 1s infinite ease-in-out;
+
+}
+
+@keyframes loading-circle {
+
+  0%,
+  100% {
+    transform: scale(0.6);
+    opacity: 0.7;
+  }
+
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.loading-circle:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.loading-circle:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.loading-circle:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.loading-circle:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+/* @media (max-width: 768px) {
+  .card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; 
+    padding: 0; 
+    margin: 0; 
+  }
+} */
+
+.price-circle {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px; /* Diametro del cerchio */
+  height: 40px; /* Diametro del cerchio */
+  border-radius: 50%; /* Rende il contenitore rotondo */
+  background-color: #822225; /* Colore rosso */
+  color: white; /* Colore del testo */
+  font-weight: bold; /* Spessore del testo */
+  font-size: 12px; 
+  text-align: center;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Sfondo scuro trasparente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Assicurati che la modale sia sopra gli altri contenuti */
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 400px; /* Larghezza della modale */
+  max-width: 90%; /* Limita la larghezza per schermi piccoli */
+  color: black;
+}
