@@ -6,6 +6,8 @@ import ModalTicket from "@/src/components/ModalTicket";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Image from "next/image";
+import { getAuth } from "firebase/auth"; 
+
 
 interface Event {
   _id: string;
@@ -97,6 +99,7 @@ const EventDetailPage = ({ params }: { params: { id: string } }) => {
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [isModalOpen, setModalOpen] = useState<boolean>(false);
   const [article, setArticle] = useState<Article[]>([]);
+  const auth = getAuth();
 
   const goBack = () => {
     window.history.back();
@@ -299,8 +302,13 @@ const EventDetailPage = ({ params }: { params: { id: string } }) => {
       </div>
 
       <div className="max-w-5xl mx-auto px-5">
-        <button
-          onClick={() => setModalOpen(true)}
+      <button
+          onClick={() => {
+            const user = auth.currentUser;
+            user
+              ? setModalOpen(true)
+              : toast.warning("Devi effettuare il login per prenotare il tuo ticket.");
+          }}
           className="mb-10 bg-rosso text-white px-4 py-2 border-2 border-rosso font-bold transition-colors duration-300 w-full md:w-auto"
         >
           <span role="img" aria-label="ticket">

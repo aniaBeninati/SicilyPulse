@@ -87,7 +87,7 @@ L'applicazione prevede due livelli di accesso:
 ## 🚀 Installazione
 
 1. **Clona il repository**:
-   git clone https://github.com/simoneedge/final-project-cb10-team-d.git
+   git clone https://github.com/aniaBeninati/SicilyPulse
 
 2. **Naviga nella cartella del progetto:**:
    cd final-project-cb10-team-d
@@ -100,7 +100,7 @@ L'applicazione prevede due livelli di accesso:
 
 ## 🌐 Demo Online
 
-Visita la demo del progetto: [SicilyPulse](https://sicilypulse.vercel.app/)
+Visita la demo del progetto: [SicilyPulse](https://sicily-pulse.vercel.app/)
 
   ## 👥 Il nostro TEAM
 

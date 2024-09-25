@@ -1,5 +1,6 @@
 import { getAuth } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
+import { toast } from "react-toastify";
 
 interface HeartButtonProps {
   eventId?: number;
@@ -22,7 +23,7 @@ const HeartButton: React.FC<HeartButtonProps> = ({ eventId, color, title, image,
     const auth = getAuth();
     const user = auth.currentUser;
     if (!user) {
-      alert("Devi effettuare il login per aggiungere ai preferiti.");
+      toast.warning("Devi effettuare il login per aggiungere i tuoi preferiti.");
       return;
     }
     const userEmail = user.email;
